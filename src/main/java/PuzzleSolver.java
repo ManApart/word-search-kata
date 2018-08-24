@@ -8,12 +8,13 @@ public class PuzzleSolver {
         this.grid = grid;
     }
 
-
     public Word find(String name) {
         List<Point> position = new ArrayList<>();
 
         int i = 0;
         for (int row = 0; row < grid.length; row++) {
+            position.clear();
+            i = 0;
             for (int col = 0; col < grid[row].length; col++) {
                 char character = grid[row][col];
                 if (character == name.charAt(i)) {

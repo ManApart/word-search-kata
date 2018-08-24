@@ -102,4 +102,25 @@ public class ForwardSearchTest {
         assertEquals(solution, "SPOCK", expectedPosition);
     }
 
+    @Test
+    public void dontErrorOnWrapAround() {
+        char[][] grid = {
+                {'B', 'O', 'N', 'E', 'S'},
+                {'S', 'P', 'O', 'C', 'K'},
+                {'A', 'A', 'A', 'A', 'A'}
+        };
+        Point[] expectedPosition = {
+                new Point(0, 1),
+                new Point(1, 1),
+                new Point(2, 1),
+                new Point(3, 1),
+                new Point(4, 1)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("SPOCK");
+
+        assertEquals(solution, "SPOCK", expectedPosition);
+    }
+
 }
