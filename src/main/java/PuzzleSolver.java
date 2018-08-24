@@ -5,7 +5,7 @@ public class PuzzleSolver {
 
 
     public Word find(String name) {
-        return new Word("BONES", new Point[]{
+        return new Word(name, new Point[]{
                 new Point(0, 0),
                 new Point(1, 0),
                 new Point(2, 0),
