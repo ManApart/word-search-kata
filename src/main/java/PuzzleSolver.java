@@ -18,6 +18,9 @@ public class PuzzleSolver {
             if (character == name.charAt(i)) {
                 position.add(new Point(col, 0));
                 i++;
+            } else {
+                position.clear();
+                i = 0;
             }
         }
 
