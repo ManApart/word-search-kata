@@ -17,7 +17,6 @@ public class ForwardSearchTest {
         }
     }
 
-
     @Test
     public void simplestPossible() {
         char[][] grid = {{'B', 'O', 'N', 'E', 'S'}};
@@ -160,6 +159,23 @@ public class ForwardSearchTest {
         Word solution = solver.find("SPOCK");
 
         assertEquals(solution, "SPOCK", expectedPosition);
+    }
+
+    @Test
+    public void reverse() {
+        char[][] grid = {{'S', 'E', 'N', 'O', 'B'}};
+        Point[] expectedPosition = {
+                new Point(4, 0),
+                new Point(3, 0),
+                new Point(2, 0),
+                new Point(1, 0),
+                new Point(0, 0)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("BONES");
+
+        assertEquals(solution, "BONES", expectedPosition);
     }
 
 }
