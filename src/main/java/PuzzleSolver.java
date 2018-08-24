@@ -9,9 +9,15 @@ public class PuzzleSolver {
     }
 
     public Word find(String name) {
+        List<Point> position = forwardSearch(name);
+
+        return new Word(name, position.toArray(new Point[0]));
+    }
+
+    private List<Point> forwardSearch(String name) {
         List<Point> position = new ArrayList<>();
 
-        int i = 0;
+        int i;
         for (int row = 0; row < grid.length; row++) {
             position.clear();
             i = 0;
@@ -29,7 +35,6 @@ public class PuzzleSolver {
                 break;
             }
         }
-
-        return new Word(name, position.toArray(new Point[0]));
+        return position;
     }
 }
