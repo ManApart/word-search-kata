@@ -51,6 +51,8 @@ public class PuzzleSolver {
 
         int i = 0;
         for (int col = 0; col < grid[0].length; col++) {
+            position.clear();
+            i = 0;
             for (int row = 0; row < grid.length; row++) {
                 char character = grid[row][col];
                 if (character == name.charAt(i)) {
