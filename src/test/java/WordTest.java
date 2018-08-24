@@ -28,12 +28,8 @@ public class WordTest {
         };
         Word word = new Word("SPOCK", position);
         for (int i=0; i< position.length; i++){
-            Point expected = position[i];
-            Point actual = word.getPosition()[i];
-            Assert.assertEquals(expected.getX(), actual.getX());
-            Assert.assertEquals(expected.getY(), actual.getY());
+            Assert.assertEquals(position[i], word.getPosition()[i]);
         }
-
     }
 
 }
