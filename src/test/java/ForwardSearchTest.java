@@ -91,4 +91,30 @@ public class ForwardSearchTest {
         }
     }
 
+    @Test
+    public void matchOnSecondRow() {
+        char[][] grid = {
+                {'A', 'A', 'A', 'A', 'A'},
+                {'S', 'P', 'O', 'C', 'K'},
+                {'A', 'A', 'A', 'A', 'A'}
+        };
+        Point[] expectedPosition = {
+                new Point(0, 1),
+                new Point(1, 1),
+                new Point(2, 1),
+                new Point(3, 1),
+                new Point(4, 1)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("SPOCK");
+
+        Assert.assertEquals("SPOCK", solution.getName());
+
+        Assert.assertEquals(expectedPosition.length, solution.getPosition().length);
+        for (int i = 0; i < expectedPosition.length; i++) {
+            Assert.assertTrue(expectedPosition[i].equals(solution.getPosition()[i]));
+        }
+    }
+
 }
