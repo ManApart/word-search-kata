@@ -58,6 +58,10 @@ public class PuzzleSolver {
                 if (character == name.charAt(i)) {
                     position.add(new Point(col, row));
                     i++;
+                } else if (character == name.charAt(0)) {
+                    position.clear();
+                    position.add(new Point(col, row));
+                    i=1;
                 } else {
                     position.clear();
                     i = 0;

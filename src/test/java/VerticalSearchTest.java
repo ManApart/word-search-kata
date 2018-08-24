@@ -117,6 +117,31 @@ public class VerticalSearchTest {
     }
 
     @Test
+    public void matchingLettersBeforeWordEdgeCase() {
+        char[][] grid = {
+                {'B'},
+                {'O'},
+                {'B'},
+                {'O'},
+                {'N'},
+                {'E'},
+                {'S'}
+        };
+        Point[] expectedPosition = {
+                new Point(0, 2),
+                new Point(0, 3),
+                new Point(0, 4),
+                new Point(0, 5),
+                new Point(0, 6)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("BONES");
+
+        assertEquals(solution, "BONES", expectedPosition);
+    }
+
+    @Test
     public void matchOnSecondColumn() {
         char[][] grid = {
                 {'A', 'B'},
