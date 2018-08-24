@@ -11,7 +11,8 @@ public class PuzzleSolver {
     public Word find(String name) {
         List<Search> searches = Arrays.asList(
                 new ForwardSearch(name),
-                new VerticalSearch(name)
+                new VerticalSearch(name),
+                new DiagonalDescendingSearch(name)
         );
 
         for (int row = 0; row < grid.length; row++) {
