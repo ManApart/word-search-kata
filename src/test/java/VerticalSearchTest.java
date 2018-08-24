@@ -36,4 +36,32 @@ public class VerticalSearchTest {
         assertEquals(solution, "BONES", expectedPosition);
     }
 
+    @Test
+    public void verticalSearchWithinLargerLine() {
+        char[][] grid = {
+                {'M'},
+                {'Y'},
+                {'O'},
+                {'L'},
+                {'D'},
+                {'B'},
+                {'O'},
+                {'N'},
+                {'E'},
+                {'S'}
+        };
+        Point[] expectedPosition = {
+                new Point(0, 5),
+                new Point(0, 6),
+                new Point(0, 7),
+                new Point(0, 8),
+                new Point(0, 9)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("BONES");
+
+        assertEquals(solution, "BONES", expectedPosition);
+    }
+
 }

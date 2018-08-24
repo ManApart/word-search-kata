@@ -10,7 +10,7 @@ public class PuzzleSolver {
 
     public Word find(String name) {
         List<Point> position = forwardSearch(name);
-        if (position.size() == name.length()){
+        if (position.size() == name.length()) {
             return new Word(name, position.toArray(new Point[0]));
         } else {
             position = verticalSearch(name);
@@ -45,8 +45,14 @@ public class PuzzleSolver {
 
     private List<Point> verticalSearch(String name) {
         List<Point> position = new ArrayList<>();
-        for (int i=0; i< name.length(); i++){
-            position.add(new Point(0, i));
+
+        int i=0;
+        for (int row = 0; row < grid.length; row++) {
+            char character = grid[row][0];
+            if (character == name.charAt(i)) {
+                position.add(new Point(0, row));
+                i++;
+            }
         }
         return position;
     }
