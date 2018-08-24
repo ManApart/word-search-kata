@@ -56,6 +56,9 @@ public class PuzzleSolver {
                 position.add(new Point(0, row));
                 i++;
             }
+            if (position.size() == name.length()) {
+                break;
+            }
         }
         return position;
     }
