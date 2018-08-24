@@ -79,4 +79,27 @@ public class DiagonalDescendingSearchTest {
         assertEquals(solution, "KIRK", expectedPosition);
     }
 
+    @Test
+    public void ignoreTrailingPartialMatches() {
+        char[][] grid = {
+                {'K','A','A','A','A'},
+                {'A','I','A','A','A'},
+                {'A','A','R','A','A'},
+                {'A','A','A','K','A'},
+                {'A','A','A','A','A'}
+        };
+        Point[] expectedPosition = {
+                new Point(0, 0),
+                new Point(1, 1),
+                new Point(2, 2),
+                new Point(3, 3)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("KIRK");
+
+        assertEquals(solution, "KIRK", expectedPosition);
+    }
+
+
 }
