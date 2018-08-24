@@ -192,4 +192,27 @@ public class VerticalSearchTest {
         assertEquals(solution, "BONES", expectedPosition);
     }
 
+    @Test
+    public void reverse() {
+        char[][] grid = {
+                {'S'},
+                {'E'},
+                {'N'},
+                {'O'},
+                {'B'}
+        };
+        Point[] expectedPosition = {
+                new Point(0, 4),
+                new Point(0, 3),
+                new Point(0, 2),
+                new Point(0, 1),
+                new Point(0, 0)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("BONES");
+
+        assertEquals(solution, "BONES", expectedPosition);
+    }
+
 }

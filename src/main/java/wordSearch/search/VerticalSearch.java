@@ -9,10 +9,12 @@ public class VerticalSearch implements Search {
     private String name;
     private List<Point> position = new ArrayList<>();
     private PositionFinder positionFinder;
+    private PositionFinder reversePositionFinder;
 
     public VerticalSearch(String name) {
         this.name = name;
         positionFinder = new PositionFinder(name);
+        reversePositionFinder = new PositionFinder(name, true);
     }
 
     @Override
@@ -21,6 +23,11 @@ public class VerticalSearch implements Search {
             List<Point> possible = positionFinder.examine(character, x, y, x);
             if (possible != null){
                 position = possible;
+            } else {
+                possible = reversePositionFinder.examine(character, x, y, x);
+                if (possible != null) {
+                    position = possible;
+                }
             }
         }
     }
