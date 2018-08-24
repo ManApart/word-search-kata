@@ -50,17 +50,19 @@ public class PuzzleSolver {
         List<Point> position = new ArrayList<>();
 
         int i = 0;
-        for (int row = 0; row < grid.length; row++) {
-            char character = grid[row][0];
-            if (character == name.charAt(i)) {
-                position.add(new Point(0, row));
-                i++;
-            } else {
-                position.clear();
-                i = 0;
-            }
-            if (position.size() == name.length()) {
-                break;
+        for (int col = 0; col < grid[0].length; col++) {
+            for (int row = 0; row < grid.length; row++) {
+                char character = grid[row][col];
+                if (character == name.charAt(i)) {
+                    position.add(new Point(col, row));
+                    i++;
+                } else {
+                    position.clear();
+                    i = 0;
+                }
+                if (position.size() == name.length()) {
+                    break;
+                }
             }
         }
         return position;

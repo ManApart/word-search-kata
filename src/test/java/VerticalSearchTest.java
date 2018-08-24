@@ -91,7 +91,6 @@ public class VerticalSearchTest {
         assertEquals(solution, "BONES", expectedPosition);
     }
 
-
     @Test
     public void matchingLettersBeforeWord() {
         char[][] grid = {
@@ -109,6 +108,29 @@ public class VerticalSearchTest {
                 new Point(0, 4),
                 new Point(0, 5),
                 new Point(0, 6)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("BONES");
+
+        assertEquals(solution, "BONES", expectedPosition);
+    }
+
+    @Test
+    public void matchOnSecondColumn() {
+        char[][] grid = {
+                {'A', 'B'},
+                {'A', 'O'},
+                {'A', 'N'},
+                {'A', 'E'},
+                {'A', 'S'}
+        };
+        Point[] expectedPosition = {
+                new Point(1, 0),
+                new Point(1, 1),
+                new Point(1, 2),
+                new Point(1, 3),
+                new Point(1, 4)
         };
 
         PuzzleSolver solver = new PuzzleSolver(grid);
