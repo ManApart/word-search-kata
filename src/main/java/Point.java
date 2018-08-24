@@ -1,14 +1,17 @@
 public class Point {
+    private int x;
+    private int y;
 
-    public Point(int x, int y){
-
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public int getX() {
-        return 1;
+        return x;
     }
 
     public int getY() {
-        return 1;
+        return y;
     }
 }

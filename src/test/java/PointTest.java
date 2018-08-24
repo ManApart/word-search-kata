@@ -9,4 +9,11 @@ public class PointTest {
         Assert.assertEquals(1, p.getX());
         Assert.assertEquals(1, p.getY());
     }
+
+    @Test
+    public void pointReturnsProperXandYForADifferentValue(){
+        Point p = new Point(2, 3);
+        Assert.assertEquals(2, p.getX());
+        Assert.assertEquals(3, p.getY());
+    }
 }
