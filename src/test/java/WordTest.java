@@ -5,14 +5,35 @@ public class WordTest {
 
     @Test
     public void wordReturnsItsName() {
-        Word word = new Word("BONES");
+        Point[] position = {new Point(0,0)};
+        Word word = new Word("BONES", position);
         Assert.assertEquals("BONES", word.getName());
     }
 
     @Test
     public void aDifferentWordReturnsItsName() {
-        Word word = new Word("SPOCK");
+        Point[] position = {new Point(0,0)};
+        Word word = new Word("SPOCK", position);
         Assert.assertEquals("SPOCK", word.getName());
+    }
+
+    @Test
+    public void wordReturnsItsPosition() {
+        Point[] position = {
+                new Point(0,0),
+                new Point(1,0),
+                new Point(2,0),
+                new Point(3,0),
+                new Point(4,0)
+        };
+        Word word = new Word("SPOCK", position);
+        for (int i=0; i< position.length; i++){
+            Point expected = position[i];
+            Point actual = word.getPosition()[i];
+            Assert.assertEquals(expected.getX(), actual.getX());
+            Assert.assertEquals(expected.getY(), actual.getY());
+        }
+
     }
 
 }
