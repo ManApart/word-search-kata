@@ -4,25 +4,19 @@ import java.util.List;
 public class ForwardSearch implements Search {
     private String name;
     private List<Point> position = new ArrayList<>();
-    private int i = 0;
+    private PositionFinder positionFinder;
 
     public ForwardSearch(String name) {
         this.name = name;
+        positionFinder = new PositionFinder(name);
     }
 
     @Override
     public void examine(char character, int x, int y) {
         if (!isWordFound()) {
-            if (character == name.charAt(i)) {
-                position.add(new Point(x, y));
-                i++;
-            } else if (character == name.charAt(0)) {
-                position.clear();
-                position.add(new Point(x, y));
-                i = 1;
-            } else {
-                position.clear();
-                i = 0;
+            List<Point> possible = positionFinder.examine(character, x, y, 0);
+            if (possible != null){
+                position = possible;
             }
         }
     }
