@@ -14,7 +14,7 @@ public class ForwardSearchTest {
 
 
     @Test
-    public void simplestPossibleForwardSearch() {
+    public void simplestPossible() {
         char[][] grid = {{'B', 'O', 'N', 'E', 'S'}};
         Point[] expectedPosition = {
                 new Point(0, 0),
@@ -31,7 +31,7 @@ public class ForwardSearchTest {
     }
 
     @Test
-    public void simplestPossibleForwardSearchWithDifferentName() {
+    public void simplestPossibleWithDifferentName() {
         char[][] grid = {{'S', 'P', 'O', 'C', 'K'}};
         Point[] expectedPosition = {
                 new Point(0, 0),
@@ -48,7 +48,7 @@ public class ForwardSearchTest {
     }
 
     @Test
-    public void forwardSearchEndOfLargerLine() {
+    public void endOfLargerLine() {
         char[][] grid = {{'I', 'L', 'I', 'K', 'E', 'S', 'P', 'O', 'C', 'K'}};
         Point[] expectedPosition = {
                 new Point(5, 0),
@@ -65,7 +65,7 @@ public class ForwardSearchTest {
     }
 
     @Test
-    public void forwardSearchStartOfLargerLine() {
+    public void startOfLargerLine() {
         char[][] grid = {{'S', 'P', 'O', 'C', 'K','I','S','C','O','O','L'}};
         Point[] expectedPosition = {
                 new Point(0, 0),
@@ -82,7 +82,7 @@ public class ForwardSearchTest {
     }
 
     @Test
-    public void forwardSearchWithSingleMatchingLetterBeforeWord() {
+    public void singleMatchingLetterBeforeWord() {
         char[][] grid = {{'I', 'S', 'E', 'E', 'S', 'P', 'O', 'C', 'K'}};
         Point[] expectedPosition = {
                 new Point(4, 0),

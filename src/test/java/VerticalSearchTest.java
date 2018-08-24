@@ -14,7 +14,7 @@ public class VerticalSearchTest {
 
 
     @Test
-    public void simplestPossibleVerticalSearch() {
+    public void simplestPossible() {
         char[][] grid = {
                 {'B'},
                 {'O'},
@@ -37,7 +37,7 @@ public class VerticalSearchTest {
     }
 
     @Test
-    public void verticalSearchWithinLargerLine() {
+    public void withinLargerLine() {
         char[][] grid = {
                 {'M'},
                 {'Y'},
@@ -65,7 +65,7 @@ public class VerticalSearchTest {
     }
 
     @Test
-    public void verticalSearchLongerLineStartsWithWord() {
+    public void longerLineStartsWithWord() {
         char[][] grid = {
                 {'B'},
                 {'O'},
