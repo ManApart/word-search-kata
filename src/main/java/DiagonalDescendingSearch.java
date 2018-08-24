@@ -25,6 +25,10 @@ public class DiagonalDescendingSearch implements Search {
                 positions.put(originalX, position);
                 indexes.put(originalX, i + 1);
             }
+        } else {
+            position.clear();
+            positions.put(originalX, position);
+            indexes.put(originalX, 0);
         }
     }
 
