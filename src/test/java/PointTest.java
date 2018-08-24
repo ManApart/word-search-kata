@@ -16,4 +16,12 @@ public class PointTest {
         Assert.assertEquals(2, p.getX());
         Assert.assertEquals(3, p.getY());
     }
+
+    @Test
+    public void pointDoesNotEqualIfValuesDifferent(){
+        Point p = new Point(3, 3);
+        Point other = new Point(2, 3);
+        Assert.assertFalse(p.equals(other));
+    }
+
 }

@@ -7,6 +7,10 @@ public class Point {
         this.y = y;
     }
 
+    public boolean equals(Point other) {
+        return false;
+    }
+
     public int getX() {
         return x;
     }
@@ -14,4 +18,6 @@ public class Point {
     public int getY() {
         return y;
     }
+
+
 }
