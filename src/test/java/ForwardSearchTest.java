@@ -99,6 +99,23 @@ public class ForwardSearchTest {
     }
 
     @Test
+    public void singleMatchingLetterBeforeWordEdgeCase() {
+        char[][] grid = {{'I', 'S', 'P', 'S', 'P', 'O', 'C', 'K'}};
+        Point[] expectedPosition = {
+                new Point(3, 0),
+                new Point(4, 0),
+                new Point(5, 0),
+                new Point(6, 0),
+                new Point(7, 0)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("SPOCK");
+
+        assertEquals(solution, "SPOCK", expectedPosition);
+    }
+
+    @Test
     public void matchOnSecondRow() {
         char[][] grid = {
                 {'A', 'A', 'A', 'A', 'A'},
