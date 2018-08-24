@@ -24,4 +24,11 @@ public class PointTest {
         Assert.assertFalse(p.equals(other));
     }
 
+    @Test
+    public void pointEqualsByValue(){
+        Point p = new Point(1, 1);
+        Point other = new Point(1, 1);
+        Assert.assertTrue(p.equals(other));
+    }
+
 }

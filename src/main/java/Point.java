@@ -8,7 +8,7 @@ public class Point {
     }
 
     public boolean equals(Point other) {
-        return false;
+        return x == other.x && y == other.y;
     }
 
     public int getX() {
