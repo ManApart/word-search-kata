@@ -9,4 +9,10 @@ public class WordTest {
         Assert.assertEquals("BONES", word.getName());
     }
 
+    @Test
+    public void aDifferentWordReturnsItsName() {
+        Word word = new Word("SPOCK");
+        Assert.assertEquals("SPOCK", word.getName());
+    }
+
 }
