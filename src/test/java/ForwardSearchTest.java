@@ -3,6 +3,16 @@ import org.junit.Test;
 
 public class ForwardSearchTest {
 
+    private void assertEquals(Word solution, String name, Point[] position){
+        Assert.assertEquals(name, solution.getName());
+
+        Assert.assertEquals(position.length, solution.getPosition().length);
+        for (int i = 0; i < position.length; i++) {
+            Assert.assertTrue(position[i].equals(solution.getPosition()[i]));
+        }
+    }
+
+
     @Test
     public void simplestPossibleForwardSearch() {
         char[][] grid = {{'B', 'O', 'N', 'E', 'S'}};
@@ -17,12 +27,7 @@ public class ForwardSearchTest {
         PuzzleSolver solver = new PuzzleSolver(grid);
         Word solution = solver.find("BONES");
 
-        Assert.assertEquals("BONES", solution.getName());
-
-        Assert.assertEquals(expectedPosition.length, solution.getPosition().length);
-        for (int i = 0; i < expectedPosition.length; i++) {
-            Assert.assertTrue(expectedPosition[i].equals(solution.getPosition()[i]));
-        }
+        assertEquals(solution, "BONES", expectedPosition);
     }
 
     @Test
@@ -39,12 +44,7 @@ public class ForwardSearchTest {
         PuzzleSolver solver = new PuzzleSolver(grid);
         Word solution = solver.find("SPOCK");
 
-        Assert.assertEquals("SPOCK", solution.getName());
-
-        Assert.assertEquals(expectedPosition.length, solution.getPosition().length);
-        for (int i = 0; i < expectedPosition.length; i++) {
-            Assert.assertTrue(expectedPosition[i].equals(solution.getPosition()[i]));
-        }
+        assertEquals(solution, "SPOCK", expectedPosition);
     }
 
     @Test
@@ -61,12 +61,7 @@ public class ForwardSearchTest {
         PuzzleSolver solver = new PuzzleSolver(grid);
         Word solution = solver.find("SPOCK");
 
-        Assert.assertEquals("SPOCK", solution.getName());
-
-        Assert.assertEquals(expectedPosition.length, solution.getPosition().length);
-        for (int i = 0; i < expectedPosition.length; i++) {
-            Assert.assertTrue(expectedPosition[i].equals(solution.getPosition()[i]));
-        }
+        assertEquals(solution, "SPOCK", expectedPosition);
     }
 
     @Test
@@ -83,12 +78,7 @@ public class ForwardSearchTest {
         PuzzleSolver solver = new PuzzleSolver(grid);
         Word solution = solver.find("SPOCK");
 
-        Assert.assertEquals("SPOCK", solution.getName());
-
-        Assert.assertEquals(expectedPosition.length, solution.getPosition().length);
-        for (int i = 0; i < expectedPosition.length; i++) {
-            Assert.assertTrue(expectedPosition[i].equals(solution.getPosition()[i]));
-        }
+        assertEquals(solution, "SPOCK", expectedPosition);
     }
 
     @Test
@@ -109,12 +99,7 @@ public class ForwardSearchTest {
         PuzzleSolver solver = new PuzzleSolver(grid);
         Word solution = solver.find("SPOCK");
 
-        Assert.assertEquals("SPOCK", solution.getName());
-
-        Assert.assertEquals(expectedPosition.length, solution.getPosition().length);
-        for (int i = 0; i < expectedPosition.length; i++) {
-            Assert.assertTrue(expectedPosition[i].equals(solution.getPosition()[i]));
-        }
+        assertEquals(solution, "SPOCK", expectedPosition);
     }
 
 }
