@@ -48,7 +48,7 @@ public class ForwardSearchTest {
     }
 
     @Test
-    public void forwardSearchWithinLargerLine() {
+    public void forwardSearchEndOfLargerLine() {
         char[][] grid = {{'I', 'L', 'I', 'K', 'E', 'S', 'P', 'O', 'C', 'K'}};
         Point[] expectedPosition = {
                 new Point(5, 0),
@@ -56,6 +56,23 @@ public class ForwardSearchTest {
                 new Point(7, 0),
                 new Point(8, 0),
                 new Point(9, 0)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("SPOCK");
+
+        assertEquals(solution, "SPOCK", expectedPosition);
+    }
+
+    @Test
+    public void forwardSearchStartOfLargerLine() {
+        char[][] grid = {{'S', 'P', 'O', 'C', 'K','I','S','C','O','O','L'}};
+        Point[] expectedPosition = {
+                new Point(0, 0),
+                new Point(1, 0),
+                new Point(2, 0),
+                new Point(3, 0),
+                new Point(4, 0)
         };
 
         PuzzleSolver solver = new PuzzleSolver(grid);

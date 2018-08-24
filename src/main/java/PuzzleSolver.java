@@ -35,6 +35,9 @@ public class PuzzleSolver {
                     position.clear();
                     i = 0;
                 }
+                if (position.size() == name.length()) {
+                    break;
+                }
             }
             if (position.size() == name.length()) {
                 break;
