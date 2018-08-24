@@ -1,3 +1,7 @@
+package wordSearch.search;
+
+import wordSearch.Point;
+
 import java.util.List;
 
 public interface Search {

@@ -1,3 +1,10 @@
+package wordSearch;
+
+import wordSearch.search.DiagonalDescendingSearch;
+import wordSearch.search.ForwardSearch;
+import wordSearch.search.Search;
+import wordSearch.search.VerticalSearch;
+
 import java.util.Arrays;
 import java.util.List;
 

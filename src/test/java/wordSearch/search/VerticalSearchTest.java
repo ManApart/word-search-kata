@@ -1,5 +1,10 @@
+package wordSearch.search;
+
 import org.junit.Assert;
 import org.junit.Test;
+import wordSearch.Point;
+import wordSearch.PuzzleSolver;
+import wordSearch.Word;
 
 public class VerticalSearchTest {
 

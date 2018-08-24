@@ -1,5 +1,8 @@
+package wordSearch;
+
 import org.junit.Assert;
 import org.junit.Test;
+import wordSearch.Point;
 
 public class PointTest {
 

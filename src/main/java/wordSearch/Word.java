@@ -1,3 +1,5 @@
+package wordSearch;
+
 public class Word {
     private String name;
     private Point[] position;

@@ -1,12 +1,16 @@
+package wordSearch.search;
+
+import wordSearch.Point;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class DiagonalDescendingSearch implements Search {
+public class ForwardSearch implements Search {
     private String name;
     private List<Point> position = new ArrayList<>();
     private PositionFinder positionFinder;
 
-    public DiagonalDescendingSearch(String name) {
+    public ForwardSearch(String name) {
         this.name = name;
         positionFinder = new PositionFinder(name);
     }
@@ -14,8 +18,7 @@ public class DiagonalDescendingSearch implements Search {
     @Override
     public void examine(char character, int x, int y) {
         if (!isWordFound()) {
-            int originalX = x - y;
-            List<Point> possible = positionFinder.examine(character, x, y, originalX);
+            List<Point> possible = positionFinder.examine(character, x, y, 0);
             if (possible != null){
                 position = possible;
             }
