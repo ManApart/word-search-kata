@@ -1,9 +1,6 @@
 package wordSearch;
 
-import wordSearch.search.DiagonalDescendingSearch;
-import wordSearch.search.ForwardSearch;
-import wordSearch.search.Search;
-import wordSearch.search.VerticalSearch;
+import wordSearch.search.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,6 +16,7 @@ public class PuzzleSolver {
         List<Search> searches = Arrays.asList(
                 new ForwardSearch(name),
                 new VerticalSearch(name),
+                new DiagonalAscendingSearch(name),
                 new DiagonalDescendingSearch(name)
         );
 
