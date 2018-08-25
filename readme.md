@@ -14,4 +14,8 @@ To run the jar with the example input run
 Make sure to replace `"B:\Coding\Workspace\Katas\word-search-kata\input.txt"` with your path to the desired input file.
 
 
+## TODO
 
+* Error handling for no file in / invalid file
+* Error handling for word not found
+* Should I move tests for searches to test just that class or keep them at the higher level?
