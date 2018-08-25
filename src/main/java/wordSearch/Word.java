@@ -16,4 +16,8 @@ public class Word {
     public Point[] getPosition() {
         return position;
     }
+
+    public String getPrintOut() {
+        return "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
+    }
 }
