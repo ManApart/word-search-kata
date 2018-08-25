@@ -17,7 +17,7 @@ public class InputParser {
         for (int y = 0; y < gridInput.size(); y++) {
             char[] row = gridInput.get(y).replaceAll(",", "").toCharArray();
             for (int x = 0; x < row.length; x++) {
-                grid[x][y] = row[x];
+                grid[y][x] = row[x];
             }
         }
         return grid;

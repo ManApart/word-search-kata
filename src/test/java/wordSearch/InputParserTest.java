@@ -42,8 +42,8 @@ public class InputParserTest {
         Assert.assertEquals(15, grid.length);
         Assert.assertEquals(15, grid[0].length);
         Assert.assertEquals('U', grid[0][0]);
-        Assert.assertEquals('E', grid[14][0]);
-        Assert.assertEquals('K', grid[0][14]);
+        Assert.assertEquals('E', grid[0][14]);
+        Assert.assertEquals('K', grid[14][0]);
         Assert.assertEquals('B', grid[14][14]);
     }
 
