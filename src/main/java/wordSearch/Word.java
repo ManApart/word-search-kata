@@ -1,5 +1,8 @@
 package wordSearch;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class Word {
     private String name;
     private Point[] position;
@@ -18,11 +21,10 @@ public class Word {
     }
 
     public String getPrintOut() {
-        String points = "";
-        for (Point p : position){
-            points += "(" + p.getX() + "," + p.getY() + "),";
-        }
-        points = points.substring(0, points.length()-1);
-        return name +": " + points;
+        String points = Arrays.stream(position)
+                .map(Point::getPrintOut)
+                .collect(Collectors.joining(","));
+
+        return name + ": " + points;
     }
 }

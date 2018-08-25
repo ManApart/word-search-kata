@@ -21,5 +21,8 @@ public class Point {
         return y;
     }
 
+    public String getPrintOut() {
+        return "(" + x + "," + y + ")";
+    }
 
 }
