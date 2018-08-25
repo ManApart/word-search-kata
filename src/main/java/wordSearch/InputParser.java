@@ -8,14 +8,19 @@ public class InputParser {
 
     public InputParser(List<String> input) {
         this.words = input.get(0).split(",");
+        this.grid = parseGrid(input);
+    }
 
-        grid = new char[input.size()-1][input.size()-1];
-        for (int y=1; y<input.size(); y++){
-            char[] row = input.get(y).replaceAll(",", "").toCharArray();
-            for (int x=0; x<row.length; x++){
-                grid[x][y-1] = row[x];
+    private char[][] parseGrid(List<String> input) {
+        List<String> gridInput = input.subList(1, input.size());
+        char[][] grid = new char[gridInput.size()][gridInput.size()];
+        for (int y = 0; y < gridInput.size(); y++) {
+            char[] row = gridInput.get(y).replaceAll(",", "").toCharArray();
+            for (int x = 0; x < row.length; x++) {
+                grid[x][y] = row[x];
             }
         }
+        return grid;
     }
 
     public String[] getSearchWords() {
