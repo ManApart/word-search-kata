@@ -38,6 +38,27 @@ public class DiagonalAscendingSearchTest {
         assertEquals(solution, "SULU", expectedPosition);
     }
 
+    @Test
+    public void reverse() {
+        char[][] grid = {
+                {'A','A','A','S'},
+                {'A','A','U','A'},
+                {'A','L','A','A'},
+                {'U','A','A','A'}
+        };
+        Point[] expectedPosition = {
+                new Point(3, 0),
+                new Point(2, 1),
+                new Point(1, 2),
+                new Point(0, 3)
+        };
+
+        PuzzleSolver solver = new PuzzleSolver(grid);
+        Word solution = solver.find("SULU");
+
+        assertEquals(solution, "SULU", expectedPosition);
+    }
+
 
 
 }

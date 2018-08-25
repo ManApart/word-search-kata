@@ -9,10 +9,12 @@ public class DiagonalAscendingSearch implements Search {
     private String name;
     private List<Point> position = new ArrayList<>();
     private PositionFinder positionFinder;
+    private PositionFinder reversePositionFinder;
 
     public DiagonalAscendingSearch(String name) {
         this.name = name;
-        positionFinder = new PositionFinder(name, true);
+        positionFinder = new PositionFinder(name);
+        reversePositionFinder = new PositionFinder(name, true);
     }
 
     @Override
@@ -22,6 +24,11 @@ public class DiagonalAscendingSearch implements Search {
             List<Point> possible = positionFinder.examine(character, x, y, originalX);
             if (possible != null){
                 position = possible;
+            } else {
+                possible = reversePositionFinder.examine(character, x, y, originalX);
+                if (possible != null) {
+                    position = possible;
+                }
             }
         }
     }
