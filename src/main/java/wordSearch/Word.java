@@ -18,6 +18,11 @@ public class Word {
     }
 
     public String getPrintOut() {
-        return "BONES: (0,6),(0,7),(0,8),(0,9),(0,10)";
+        String points = "";
+        for (Point p : position){
+            points += "(" + p.getX() + "," + p.getY() + "),";
+        }
+        points = points.substring(0, points.length()-1);
+        return name +": " + points;
     }
 }

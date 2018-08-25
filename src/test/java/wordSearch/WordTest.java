@@ -41,10 +41,22 @@ public class WordTest {
                 new Point(0, 7),
                 new Point(0, 8),
                 new Point(0, 9),
-                new Point(0, 10),
+                new Point(0, 10)
         };
         Word word = new Word("BONES", position);
         Assert.assertEquals("BONES: (0,6),(0,7),(0,8),(0,9),(0,10)", word.getPrintOut());
+    }
+
+    @Test
+    public void printADifferentWord() {
+        Point[] position = {
+                new Point(5, 9),
+                new Point(5, 8),
+                new Point(5, 7),
+                new Point(5, 6)
+        };
+        Word word = new Word("KHAN", position);
+        Assert.assertEquals("KHAN: (5,9),(5,8),(5,7),(5,6)", word.getPrintOut());
     }
 
 }
