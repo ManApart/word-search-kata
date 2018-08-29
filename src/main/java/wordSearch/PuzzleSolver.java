@@ -14,7 +14,7 @@ public class PuzzleSolver {
 
     public Word find(String name) {
         List<Search> searches = Arrays.asList(
-                new ForwardSearch(name),
+                new HorizontalSearch(name),
                 new VerticalSearch(name),
                 new DiagonalAscendingSearch(name),
                 new DiagonalDescendingSearch(name)

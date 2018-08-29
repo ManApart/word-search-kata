@@ -5,13 +5,13 @@ import wordSearch.Point;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForwardSearch implements Search {
+public class HorizontalSearch implements Search {
     private String name;
     private List<Point> position = new ArrayList<>();
     private PositionFinder positionFinder;
     private PositionFinder reversePositionFinder;
 
-    public ForwardSearch(String name) {
+    public HorizontalSearch(String name) {
         this.name = name;
         positionFinder = new PositionFinder(name);
         reversePositionFinder = new PositionFinder(name, true);

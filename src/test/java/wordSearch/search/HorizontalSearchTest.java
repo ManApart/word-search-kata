@@ -6,7 +6,7 @@ import wordSearch.Point;
 import wordSearch.PuzzleSolver;
 import wordSearch.Word;
 
-public class ForwardSearchTest {
+public class HorizontalSearchTest {
 
     private void assertEquals(Word solution, String name, Point[] position){
         Assert.assertEquals(name, solution.getName());
