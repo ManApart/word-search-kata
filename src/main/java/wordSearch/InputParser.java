@@ -16,10 +16,10 @@ class InputParser {
         char[][] grid = new char[gridInput.size()][gridInput.size()];
         for (int y = 0; y < gridInput.size(); y++) {
             char[] row = gridInput.get(y).replaceAll(",", "").toCharArray();
-            if (row.length > gridInput.size()){
-                throw new InvalidInputException("Grid not square. Row "+ y + " too long.");
-            } else if (row.length < gridInput.size()){
-                throw new InvalidInputException("Grid not square. Row 0 too short.");
+            if (row.length > gridInput.size()) {
+                throw new InvalidInputException("Grid not square. Row " + y + " too long.");
+            } else if (row.length < gridInput.size()) {
+                throw new InvalidInputException("Grid not square. Row " + y + " too short.");
             }
             System.arraycopy(row, 0, grid[y], 0, row.length);
         }
