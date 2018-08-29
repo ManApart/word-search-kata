@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PuzzleSolver {
-    char[][] grid;
+    private char[][] grid;
 
     public PuzzleSolver(char[][] grid) {
         this.grid = grid;

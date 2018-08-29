@@ -13,15 +13,15 @@ public class Point {
         return x == other.x && y == other.y;
     }
 
-    public int getX() {
+    int getX() {
         return x;
     }
 
-    public int getY() {
+    int getY() {
         return y;
     }
 
-    public String getPrintOut() {
+    String getPrintOut() {
         return "(" + x + "," + y + ")";
     }
 

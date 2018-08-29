@@ -19,11 +19,10 @@ Make sure to replace `"B:\Coding\Workspace\Katas\word-search-kata\input.txt"` wi
 * Error handling for no file in / invalid file
 * Error handling for word not found
 * Should I move tests for searches to test just that class or keep them at the higher level?
+* Code Warnings
+  * InputParser manual array copy
 
 ## TODO per helpful feedback
- * Class and member privacy 
-   * PuzzleSolver.grid could be made private
-   * PositionFinder constructors could be package-private
 * Clearer tests and classes names. 
   * ForwardSearchTest.reverse() > ForwardSearchTest probably should have been renamed to HorizontalSearchTest
 * Check unhappy path scenarios in tests. 

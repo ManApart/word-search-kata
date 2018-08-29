@@ -7,7 +7,7 @@ public class Word {
     private String name;
     private Point[] position;
 
-    public Word(String name, Point[] position) {
+    Word(String name, Point[] position) {
         this.name = name;
         this.position = position;
     }
@@ -20,7 +20,7 @@ public class Word {
         return position;
     }
 
-    public String getPrintOut() {
+    String getPrintOut() {
         String points = Arrays.stream(position)
                 .map(Point::getPrintOut)
                 .collect(Collectors.joining(","));

@@ -7,18 +7,18 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class PositionFinder {
+class PositionFinder {
     private String name;
     private boolean reverse;
     private HashMap<Integer, List<Point>> positions = new HashMap<>();
     private HashMap<Integer, Integer> indexes = new HashMap<>();
     private char firstCharacter;
 
-    public PositionFinder(String name) {
+    PositionFinder(String name) {
         this(name, false);
     }
 
-    public PositionFinder(String name, boolean reverse) {
+    PositionFinder(String name, boolean reverse) {
         this.name = name;
         this.reverse = reverse;
         if (reverse) {
@@ -28,7 +28,7 @@ public class PositionFinder {
         }
     }
 
-    public List<Point> examine(char character, int x, int y, int start) {
+    List<Point> examine(char character, int x, int y, int start) {
         int i = getIndex(start);
         List<Point> position = getColumnPosition(start);
         char current = getCurrentChar(i);

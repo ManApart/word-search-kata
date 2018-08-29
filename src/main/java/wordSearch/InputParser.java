@@ -2,11 +2,11 @@ package wordSearch;
 
 import java.util.List;
 
-public class InputParser {
+class InputParser {
     private String[] words;
     private char[][] grid;
 
-    public InputParser(List<String> input) {
+    InputParser(List<String> input) {
         this.words = input.get(0).split(",");
         this.grid = parseGrid(input);
     }
@@ -23,11 +23,11 @@ public class InputParser {
         return grid;
     }
 
-    public String[] getSearchWords() {
+    String[] getSearchWords() {
         return words;
     }
 
-    public char[][] getGrid() {
+    char[][] getGrid() {
         return grid;
     }
 }
