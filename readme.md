@@ -13,19 +13,26 @@ To run the jar with the example input run
 
 Make sure to replace `"B:\Coding\Workspace\Katas\word-search-kata\input.txt"` with your path to the desired input file.
 
+If you run the included file, the expected output is:
+
+```
+BONES: (0,6),(0,7),(0,8),(0,9),(0,10)
+KHAN: (5,9),(5,8),(5,7),(5,6)
+KIRK: (4,7),(3,7),(2,7),(1,7)
+SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)
+SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)
+SULU: (3,3),(2,2),(1,1),(0,0)
+UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)
+```
 
 ## TODO
 
-* Error handling for no file in / invalid file
-* Error handling for word not found
+* WordPositionFinder.examine is ugly, can it be broken out to more methods?
 * Should I move tests for searches to test just that class or keep them at the higher level?
-* Code Warnings
-  * InputParser manual array copy
 
 ## TODO per helpful feedback
-* Clearer tests names
-  * ForwardSearchTest.reverse() > ForwardSearchTest probably should have been renamed to HorizontalSearchTest
- * Clearer class names
 * Check unhappy path scenarios in tests. 
   * improperly formatted input file; the program crashed: java -jar build/libs/word-search-kata-1.0-SNAPSHOT.jar ~/code/kata-reviews/word-search-kata/st.txt
+  * Error handling for no file in / invalid file
+  * Error handling for word not found
 * The cyclomatic complexity of PuzzleSolver.find(). Reduce the nested loops

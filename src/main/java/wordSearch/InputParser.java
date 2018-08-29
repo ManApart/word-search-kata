@@ -16,9 +16,7 @@ class InputParser {
         char[][] grid = new char[gridInput.size()][gridInput.size()];
         for (int y = 0; y < gridInput.size(); y++) {
             char[] row = gridInput.get(y).replaceAll(",", "").toCharArray();
-            for (int x = 0; x < row.length; x++) {
-                grid[y][x] = row[x];
-            }
+            System.arraycopy(row, 0, grid[y], 0, row.length);
         }
         return grid;
     }
