@@ -84,4 +84,23 @@ public class InputParserTest {
         }
     }
 
+    @Test
+    public void nonSquareTallGridThrowsInvalidGridError() {
+        List<String> input = Arrays.asList(
+                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "U,M",
+                "U,M",
+                "U,M",
+                "U,M"
+        );
+
+        try {
+            InputParser parser = new InputParser(input);
+            parser.getGrid();
+            fail( "Input grid is invalid" );
+        } catch (InvalidInputException exception) {
+            Assert.assertEquals("Grid not square. Row 0 too short.", exception.getMessage());
+        }
+    }
+
 }
