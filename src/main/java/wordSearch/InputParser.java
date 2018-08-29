@@ -17,7 +17,7 @@ class InputParser {
         for (int y = 0; y < gridInput.size(); y++) {
             char[] row = gridInput.get(y).replaceAll(",", "").toCharArray();
             if (row.length > gridInput.size()){
-                throw new InvalidInputException("Grid not square. Row 0 too long.");
+                throw new InvalidInputException("Grid not square. Row "+ y + " too long.");
             }
             System.arraycopy(row, 0, grid[y], 0, row.length);
         }

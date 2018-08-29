@@ -66,4 +66,22 @@ public class InputParserTest {
         }
     }
 
+    @Test
+    public void gridThrowsErrorIfLineOverlyLong() {
+        List<String> input = Arrays.asList(
+                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "A,B,C",
+                "A,B,C,D",
+                "A,B,C"
+        );
+
+        try {
+            InputParser parser = new InputParser(input);
+            parser.getGrid();
+            fail( "Input grid is invalid" );
+        } catch (InvalidInputException exception) {
+            Assert.assertEquals("Grid not square. Row 1 too long.", exception.getMessage());
+        }
+    }
+
 }
