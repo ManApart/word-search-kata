@@ -60,7 +60,7 @@ public class InputParserTest {
         try {
             InputParser parser = new InputParser(input);
             parser.getGrid();
-            fail( "Input grid is invalid" );
+            fail("Input grid is invalid");
         } catch (InvalidInputException exception) {
             Assert.assertEquals("Grid not square. Row 0 too long.", exception.getMessage());
         }
@@ -78,7 +78,7 @@ public class InputParserTest {
         try {
             InputParser parser = new InputParser(input);
             parser.getGrid();
-            fail( "Input grid is invalid" );
+            fail("Input grid is invalid");
         } catch (InvalidInputException exception) {
             Assert.assertEquals("Grid not square. Row 1 too long.", exception.getMessage());
         }
@@ -97,7 +97,7 @@ public class InputParserTest {
         try {
             InputParser parser = new InputParser(input);
             parser.getGrid();
-            fail( "Input grid is invalid" );
+            fail("Input grid is invalid");
         } catch (InvalidInputException exception) {
             Assert.assertEquals("Grid not square. Row 0 too short.", exception.getMessage());
         }
@@ -115,10 +115,43 @@ public class InputParserTest {
         try {
             InputParser parser = new InputParser(input);
             parser.getGrid();
-            fail( "Input grid is invalid" );
+            fail("Input grid is invalid");
         } catch (InvalidInputException exception) {
             Assert.assertEquals("Grid not square. Row 2 too short.", exception.getMessage());
         }
+    }
+
+
+    @Test
+    public void parserOnlyAcceptsCapitalLetters() {
+        List<String> letters = Arrays.asList("1", "a", "#", "!");
+        List<Integer> xPositions = Arrays.asList(0, 1, 2, 0);
+        List<Integer> yPositions = Arrays.asList(2, 1, 0, 2);
+
+        for (int i = 0; i < letters.size(); i++) {
+            List<String> input = createGrid(letters.get(i), xPositions.get(i), yPositions.get(i));
+            try {
+                InputParser parser = new InputParser(input);
+                parser.getGrid();
+                fail("Input grid is invalid");
+            } catch (InvalidInputException exception) {
+                Assert.assertEquals("Row "+ yPositions.get(i) + "contains an invalid character.", exception.getMessage());
+            }
+        }
+    }
+
+    private List<String> createGrid(String letter, int x, int y) {
+        List<String> grid = Arrays.asList(
+                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "A,B,C",
+                "A,B,C",
+                "A,B,C"
+        );
+        String[] row = grid.get(y + 1).split(",");
+        row[x] = letter;
+        String replacement = String.join(",", row);
+        grid.set(y + 1, replacement);
+        return grid;
     }
 
 }

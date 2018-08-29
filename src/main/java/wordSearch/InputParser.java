@@ -13,12 +13,20 @@ class InputParser {
 
     private char[][] parseGrid(List<String> input) {
         List<String> gridInput = input.subList(1, input.size());
+        String capitalLettersPattern= "^[A-Z]*$";
+
         char[][] grid = new char[gridInput.size()][gridInput.size()];
         for (int y = 0; y < gridInput.size(); y++) {
-            char[] row = gridInput.get(y).replaceAll(",", "").toCharArray();
+            String rowString = gridInput.get(y).replaceAll(",", "");
+            if (!rowString.matches(capitalLettersPattern)) {
+                throw new InvalidInputException("Row "+ y + "contains an invalid character.");
+            }
+
+            char[] row = rowString.toCharArray();
             validateGridIsSquare(gridInput.size(), row.length, y);
             System.arraycopy(row, 0, grid[y], 0, row.length);
         }
+
         return grid;
     }
 
