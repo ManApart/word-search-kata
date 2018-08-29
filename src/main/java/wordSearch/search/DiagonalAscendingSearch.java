@@ -8,24 +8,24 @@ import java.util.List;
 public class DiagonalAscendingSearch implements Search {
     private String name;
     private List<Point> position = new ArrayList<>();
-    private PositionFinder positionFinder;
-    private PositionFinder reversePositionFinder;
+    private WordPositionFinder wordPositionFinder;
+    private WordPositionFinder reverseWordPositionFinder;
 
     public DiagonalAscendingSearch(String name) {
         this.name = name;
-        positionFinder = new PositionFinder(name);
-        reversePositionFinder = new PositionFinder(name, true);
+        wordPositionFinder = new WordPositionFinder(name);
+        reverseWordPositionFinder = new WordPositionFinder(name, true);
     }
 
     @Override
     public void examine(char character, int x, int y) {
         if (!isWordFound()) {
             int originalX = -x-y;
-            List<Point> possible = positionFinder.examine(character, x, y, originalX);
+            List<Point> possible = wordPositionFinder.examine(character, x, y, originalX);
             if (possible != null){
                 position = possible;
             } else {
-                possible = reversePositionFinder.examine(character, x, y, originalX);
+                possible = reverseWordPositionFinder.examine(character, x, y, originalX);
                 if (possible != null) {
                     position = possible;
                 }

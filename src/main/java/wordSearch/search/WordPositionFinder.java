@@ -7,24 +7,24 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-class PositionFinder {
-    private String name;
+class WordPositionFinder {
+    private String word;
     private boolean reverse;
     private HashMap<Integer, List<Point>> positions = new HashMap<>();
     private HashMap<Integer, Integer> indexes = new HashMap<>();
     private char firstCharacter;
 
-    PositionFinder(String name) {
-        this(name, false);
+    WordPositionFinder(String word) {
+        this(word, false);
     }
 
-    PositionFinder(String name, boolean reverse) {
-        this.name = name;
+    WordPositionFinder(String word, boolean reverse) {
+        this.word = word;
         this.reverse = reverse;
         if (reverse) {
-            firstCharacter = name.charAt(name.length() - 1);
+            firstCharacter = word.charAt(word.length() - 1);
         } else {
-            firstCharacter = name.charAt(0);
+            firstCharacter = word.charAt(0);
         }
     }
 
@@ -35,7 +35,7 @@ class PositionFinder {
 
         if (character == current) {
             position.add(new Point(x, y));
-            if (position.size() == name.length()) {
+            if (position.size() == word.length()) {
                 if (reverse) {
                     Collections.reverse(position);
                     return position;
@@ -61,9 +61,9 @@ class PositionFinder {
 
     private char getCurrentChar(int i) {
         if (reverse) {
-            return name.charAt(name.length() - (i + 1));
+            return word.charAt(word.length() - (i + 1));
         } else {
-            return name.charAt(i);
+            return word.charAt(i);
         }
     }
 
