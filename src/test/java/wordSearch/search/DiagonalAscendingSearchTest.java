@@ -39,7 +39,7 @@ public class DiagonalAscendingSearchTest {
     }
 
     @Test
-    public void reverse() {
+    public void backwardsSearch() {
         char[][] grid = {
                 {'A','A','A','S'},
                 {'A','A','U','A'},

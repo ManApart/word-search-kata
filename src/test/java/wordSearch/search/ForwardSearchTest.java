@@ -162,7 +162,7 @@ public class ForwardSearchTest {
     }
 
     @Test
-    public void reverse() {
+    public void backwardsSearch() {
         char[][] grid = {{'S', 'E', 'N', 'O', 'B'}};
         Point[] expectedPosition = {
                 new Point(4, 0),

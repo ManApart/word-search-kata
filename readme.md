@@ -23,8 +23,9 @@ Make sure to replace `"B:\Coding\Workspace\Katas\word-search-kata\input.txt"` wi
   * InputParser manual array copy
 
 ## TODO per helpful feedback
-* Clearer tests and classes names. 
+* Clearer tests names
   * ForwardSearchTest.reverse() > ForwardSearchTest probably should have been renamed to HorizontalSearchTest
+ * Clearer class names
 * Check unhappy path scenarios in tests. 
   * improperly formatted input file; the program crashed: java -jar build/libs/word-search-kata-1.0-SNAPSHOT.jar ~/code/kata-reviews/word-search-kata/st.txt
 * The cyclomatic complexity of PuzzleSolver.find(). Reduce the nested loops

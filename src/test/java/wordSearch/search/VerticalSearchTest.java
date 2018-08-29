@@ -193,7 +193,7 @@ public class VerticalSearchTest {
     }
 
     @Test
-    public void reverse() {
+    public void backwardsSearch() {
         char[][] grid = {
                 {'S'},
                 {'E'},

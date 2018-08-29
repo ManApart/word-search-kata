@@ -107,7 +107,7 @@ public class DiagonalDescendingSearchTest {
     }
 
     @Test
-    public void reverse() {
+    public void backwardsSearch() {
         char[][] grid = {
                 {'K','A','A','A'},
                 {'A','R','A','A'},
