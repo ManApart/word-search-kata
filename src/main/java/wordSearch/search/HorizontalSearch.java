@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HorizontalSearch implements Search {
-    private String name;
+    private String word;
     private List<Point> position = new ArrayList<>();
     private WordPositionFinder wordPositionFinder;
     private WordPositionFinder reverseWordPositionFinder;
 
-    public HorizontalSearch(String name) {
-        this.name = name;
-        wordPositionFinder = new WordPositionFinder(name);
-        reverseWordPositionFinder = new WordPositionFinder(name, true);
+    public HorizontalSearch(String word) {
+        this.word = word;
+        wordPositionFinder = new WordPositionFinder(word);
+        reverseWordPositionFinder = new WordPositionFinder(word, true);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class HorizontalSearch implements Search {
 
     @Override
     public boolean isWordFound() {
-        return position.size() == name.length();
+        return position.size() == word.length();
     }
 
     @Override
