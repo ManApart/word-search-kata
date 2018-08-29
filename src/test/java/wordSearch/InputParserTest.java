@@ -6,8 +6,11 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.Assert.fail;
+
 public class InputParserTest {
-    List<String> input = Arrays.asList(
+
+    private List<String> input = Arrays.asList(
             "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
             "U,M,K,H,U,L,K,I,N,V,J,O,C,W,E",
             "L,L,S,H,K,Z,Z,W,Z,C,G,J,U,Y,G",
@@ -45,6 +48,22 @@ public class InputParserTest {
         Assert.assertEquals('E', grid[0][14]);
         Assert.assertEquals('K', grid[14][0]);
         Assert.assertEquals('B', grid[14][14]);
+    }
+
+    @Test
+    public void nonSquareFatGridThrowsInvalidGridError() {
+        List<String> input = Arrays.asList(
+                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "U,M,K,H,U,L,K,I,N,V,J,O,C,W,E"
+        );
+
+        try {
+            InputParser parser = new InputParser(input);
+            parser.getGrid();
+            fail( "Input grid is invalid" );
+        } catch (InvalidInputException exception) {
+            Assert.assertEquals("Grid not square. Row 0 too long.", exception.getMessage());
+        }
     }
 
 }
