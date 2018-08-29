@@ -16,14 +16,18 @@ class InputParser {
         char[][] grid = new char[gridInput.size()][gridInput.size()];
         for (int y = 0; y < gridInput.size(); y++) {
             char[] row = gridInput.get(y).replaceAll(",", "").toCharArray();
-            if (row.length > gridInput.size()) {
-                throw new InvalidInputException("Grid not square. Row " + y + " too long.");
-            } else if (row.length < gridInput.size()) {
-                throw new InvalidInputException("Grid not square. Row " + y + " too short.");
-            }
+            validateGridIsSquare(gridInput.size(), row.length, y);
             System.arraycopy(row, 0, grid[y], 0, row.length);
         }
         return grid;
+    }
+
+    private void validateGridIsSquare(int gridSize, int rowLength, int row) {
+        if (rowLength > gridSize) {
+            throw new InvalidInputException("Grid not square. Row " + row + " too long.");
+        } else if (rowLength < gridSize) {
+            throw new InvalidInputException("Grid not square. Row " + row + " too short.");
+        }
     }
 
     String[] getSearchWords() {
