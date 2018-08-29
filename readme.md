@@ -31,8 +31,4 @@ UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)
 * Should I move tests for searches to test just that class or keep them at the higher level?
 
 ## TODO per helpful feedback
-* Check unhappy path scenarios in tests. 
-  * improperly formatted input file; the program crashed: java -jar build/libs/word-search-kata-1.0-SNAPSHOT.jar ~/code/kata-reviews/word-search-kata/st.txt
-  * Error handling for no file in / invalid file
-  * Error handling for word not found
 * The cyclomatic complexity of PuzzleSolver.find(). Reduce the nested loops

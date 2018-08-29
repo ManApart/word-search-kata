@@ -30,7 +30,6 @@ public class PuzzleSolver {
                 }
             }
         }
-
-        return null;
+        throw new WordNotFoundException(name + " not found in puzzle.");
     }
 }
