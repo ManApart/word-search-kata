@@ -121,7 +121,6 @@ public class InputParserTest {
         }
     }
 
-
     @Test
     public void parserOnlyAcceptsCapitalLetters() {
         List<String> letters = Arrays.asList("1", "a", "#", "!");
@@ -152,6 +151,23 @@ public class InputParserTest {
         String replacement = String.join(",", row);
         grid.set(y + 1, replacement);
         return grid;
+    }
+
+    @Test
+    public void wordsMustBeAtLeastTwoCharactersLong(){
+        List<String> input = Arrays.asList(
+                "BONES,KHAN,A",
+                "U,M",
+                "U,M"
+        );
+
+        try {
+            InputParser parser = new InputParser(input);
+            parser.getGrid();
+            fail("Input grid is invalid");
+        } catch (InvalidInputException exception) {
+            Assert.assertEquals("Input word A is too short.", exception.getMessage());
+        }
     }
 
 }

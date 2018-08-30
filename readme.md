@@ -1,5 +1,7 @@
 # Word Search Kata
 
+[Kata Source](https://github.com/PillarTechnology/kata-word-search)
+
 ## Building / Testing 
 
 Run `gradle clean build test` to clean, build and test the project.

@@ -8,6 +8,12 @@ class InputParser {
 
     InputParser(List<String> input) {
         this.words = input.get(0).split(",");
+        for (String word : words){
+            if (word.length() < 2){
+                throw new InvalidInputException("Input word " + word + " is too short.");
+            }
+        }
+
         this.grid = parseGrid(input);
     }
 
