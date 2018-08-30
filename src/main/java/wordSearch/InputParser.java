@@ -8,9 +8,13 @@ class InputParser {
 
     InputParser(List<String> input) {
         this.words = input.get(0).split(",");
+        int gridSize = input.size()-1;
         for (String word : words){
             if (word.length() < 2){
                 throw new InvalidInputException("Input word " + word + " is too short.");
+            }
+            if (word.length() > gridSize){
+                throw new InvalidInputException("Input word " + word + " is too long.");
             }
         }
 

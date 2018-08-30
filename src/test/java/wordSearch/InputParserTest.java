@@ -53,7 +53,8 @@ public class InputParserTest {
     @Test
     public void nonSquareFatGridThrowsInvalidGridError() {
         List<String> input = Arrays.asList(
-                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "AA,AB",
+                "U,M,K,H,U,L,K,I,N,V,J,O,C,W,E",
                 "U,M,K,H,U,L,K,I,N,V,J,O,C,W,E"
         );
 
@@ -69,7 +70,7 @@ public class InputParserTest {
     @Test
     public void gridThrowsErrorIfLineOverlyLong() {
         List<String> input = Arrays.asList(
-                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "AA,AB",
                 "A,B,C",
                 "A,B,C,D",
                 "A,B,C"
@@ -87,7 +88,7 @@ public class InputParserTest {
     @Test
     public void nonSquareTallGridThrowsInvalidGridError() {
         List<String> input = Arrays.asList(
-                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "KHAN",
                 "U,M",
                 "U,M",
                 "U,M",
@@ -106,7 +107,7 @@ public class InputParserTest {
     @Test
     public void gridThrowsErrorIfLineOverlyShort() {
         List<String> input = Arrays.asList(
-                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "AB",
                 "A,B,C",
                 "A,B,C",
                 "A,B"
@@ -141,7 +142,7 @@ public class InputParserTest {
 
     private List<String> createGrid(String letter, int x, int y) {
         List<String> grid = Arrays.asList(
-                "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA",
+                "AB",
                 "A,B,C",
                 "A,B,C",
                 "A,B,C"
@@ -156,7 +157,7 @@ public class InputParserTest {
     @Test
     public void wordsMustBeAtLeastTwoCharactersLong(){
         List<String> input = Arrays.asList(
-                "BONES,KHAN,A",
+                "UM,AB,A",
                 "U,M",
                 "U,M"
         );
@@ -167,6 +168,24 @@ public class InputParserTest {
             fail("Input grid is invalid");
         } catch (InvalidInputException exception) {
             Assert.assertEquals("Input word A is too short.", exception.getMessage());
+        }
+    }
+    @Test
+    public void wordsMustBeShorterThanGridSize(){
+        List<String> input = Arrays.asList(
+                "AB,KHAN,BONES",
+                "A,B,C,D",
+                "A,B,C,D",
+                "A,B,C,D",
+                "A,B,C,D"
+        );
+
+        try {
+            InputParser parser = new InputParser(input);
+            parser.getGrid();
+            fail("Input grid is invalid");
+        } catch (InvalidInputException exception) {
+            Assert.assertEquals("Input word BONES is too long.", exception.getMessage());
         }
     }
 
