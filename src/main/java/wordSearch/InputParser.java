@@ -29,7 +29,7 @@ class InputParser {
         for (int y = 0; y < gridInput.size(); y++) {
             String rowString = gridInput.get(y).replaceAll(",", "");
             if (!rowString.matches(capitalLettersPattern)) {
-                throw new InvalidInputException("Row "+ y + "contains an invalid character.");
+                throw new InvalidInputException("Row "+ y + " contains an invalid character.");
             }
 
             char[] row = rowString.toCharArray();

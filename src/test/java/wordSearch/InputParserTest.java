@@ -135,7 +135,7 @@ public class InputParserTest {
                 parser.getGrid();
                 fail("Input grid is invalid");
             } catch (InvalidInputException exception) {
-                Assert.assertEquals("Row "+ yPositions.get(i) + "contains an invalid character.", exception.getMessage());
+                Assert.assertEquals("Row "+ yPositions.get(i) + " contains an invalid character.", exception.getMessage());
             }
         }
     }
