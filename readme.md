@@ -29,7 +29,6 @@ UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)
 
 ## TODO
 
-* WordPositionFinder.examine is ugly, can it be broken out to more methods?
 * Should I move tests for searches to test just that class or keep them at the higher level?
 
 ## TODO per helpful feedback
