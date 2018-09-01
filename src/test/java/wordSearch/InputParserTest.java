@@ -3,6 +3,7 @@ package wordSearch;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -135,7 +136,7 @@ public class InputParserTest {
                 parser.getGrid();
                 fail("Input grid is invalid");
             } catch (InvalidInputException exception) {
-                Assert.assertEquals("Row "+ yPositions.get(i) + " contains an invalid character.", exception.getMessage());
+                Assert.assertEquals("Row " + yPositions.get(i) + " contains an invalid character.", exception.getMessage());
             }
         }
     }
@@ -155,7 +156,7 @@ public class InputParserTest {
     }
 
     @Test
-    public void wordsMustBeAtLeastTwoCharactersLong(){
+    public void wordsMustBeAtLeastTwoCharactersLong() {
         List<String> input = Arrays.asList(
                 "UM,AB,A",
                 "U,M",
@@ -170,8 +171,9 @@ public class InputParserTest {
             Assert.assertEquals("Input word A is too short.", exception.getMessage());
         }
     }
+
     @Test
-    public void wordsMustBeShorterThanGridSize(){
+    public void wordsMustBeShorterThanGridSize() {
         List<String> input = Arrays.asList(
                 "AB,KHAN,BONES",
                 "A,B,C,D",
@@ -186,6 +188,19 @@ public class InputParserTest {
             fail("Input grid is invalid");
         } catch (InvalidInputException exception) {
             Assert.assertEquals("Input word BONES is too long.", exception.getMessage());
+        }
+    }
+
+    @Test
+    public void noInputThrowsError() {
+        List<String> input = new ArrayList<>();
+
+        try {
+            InputParser parser = new InputParser(input);
+            parser.getGrid();
+            fail("Input grid is invalid");
+        } catch (InvalidInputException exception) {
+            Assert.assertEquals("No data found.", exception.getMessage());
         }
     }
 

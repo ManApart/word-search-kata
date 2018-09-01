@@ -7,6 +7,9 @@ class InputParser {
     private char[][] grid;
 
     InputParser(List<String> input) {
+        if (input.isEmpty()){
+            throw new InvalidInputException("No data found.");
+        }
         this.words = input.get(0).split(",");
         int gridSize = input.size()-1;
         for (String word : words){
