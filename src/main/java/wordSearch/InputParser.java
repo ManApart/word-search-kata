@@ -10,8 +10,21 @@ class InputParser {
         if (input.isEmpty()){
             throw new InvalidInputException("No data found.");
         }
-        this.words = input.get(0).split(",");
+
+        this.words = parseWords(input);
+        this.grid = parseGrid(input);
+    }
+
+    private String[] parseWords(List<String> input) {
+        String[] words = input.get(0).split(",");
+
         int gridSize = input.size()-1;
+        validateWords(words, gridSize);
+        
+        return words;
+    }
+
+    private void validateWords(String[] words, int gridSize) {
         for (String word : words){
             if (word.length() < 2){
                 throw new InvalidInputException("Input word " + word + " is too short.");
@@ -20,8 +33,6 @@ class InputParser {
                 throw new InvalidInputException("Input word " + word + " is too long.");
             }
         }
-
-        this.grid = parseGrid(input);
     }
 
     private char[][] parseGrid(List<String> input) {
